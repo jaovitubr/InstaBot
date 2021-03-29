@@ -1,0 +1,33 @@
+{
+  "name": "InstaBot",
+  "version": "1.0.0",
+  "description": "Automação (BOT) de comentários para Instagram feito em Electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "npx electron .",
+    "dev": "npx electronmon .",
+    "build": "npx electron-packager . --icon=src/images/icon.ico --overwrite --version-string.LegalCopyright=\"Copyright (C) 2020 João Vitor Machado. All rights reserved.\" --platform=win32 --arch=ia32",
+    "build64": "npx electron-packager . --icon=src/images/icon.ico --overwrite --version-string.LegalCopyright=\"Copyright (C) 2020 João Vitor Machado. All rights reserved.\""
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "nodejs",
+    "Instagram",
+    "Bot",
+    "Comentários"
+  ],
+  "author": "João Vitor Machado",
+  "license": "MIT",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.0.20",
+    "custom-electron-titlebar": "^3.2.6",
+    "express": "^4.17.1",
+    "fluent-ffmpeg": "^2.1.2",
+    "open": "^7.0.0",
+    "puppeteer": "^8.0.0"
+  },
+  "devDependencies": {
+    "electron": "^12.0.2"
+  }
+}

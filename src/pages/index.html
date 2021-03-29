@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Intagram BOT</title>
+  <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+  <link rel="stylesheet" href="../styles/sweetalert.css">
+</head>
+
+<body>
+  <div id="particles-js"></div>
+  <script type="text/javascript" src="../scripts/particles.js"></script>
+  <form>
+    <header>
+      <h1>InstaBOT</h1>
+      <p>By: João Vitor M</p>
+      <a class="github-link" href="https://github.com/joaovitmac/InstaBot"><img src="../images/github.svg" /></a>
+    </header>
+    <div class="options">
+      <div class="config">
+        <p>Configurações</p>
+        <div>
+          <label>
+            <span>Link da postagem</span>
+            <input type="url" name="url" placeholder="Digite um link" pattern="(.)+\.instagram\.(.)+" required />
+          </label>
+          <label>
+            <span>Delay <small>(Atraso em segundos)</small></span>
+            <input type="number" name="delay" value="10" min="1" max="10000" required />
+          </label>
+          <label>
+            <span>Máximo de comentários</span>
+            <input type="number" name="max_comments" value="150" min="1" max="10000" required />
+          </label>
+        </div>
+      </div>
+
+      <div class="messages">
+        <p>Lista de mensagens</p>
+        <div class="list"><span class="empty-msg">Nenhuma</span></div>
+        <div class="add">
+          <input placeholder="Digite uma mensagem">
+          <button>Adicionar</button>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="button">Iniciar</button>
+  </form>
+  <div id="working-alert" class="starting">
+    <div>
+      <div class="cat-container">
+        <div class="cat">
+          <div class="cat__body"></div>
+          <div class="cat__body"></div>
+          <div class="cat__tail"></div>
+          <div class="cat__head"></div>
+        </div>
+      </div>
+
+      <div class="face-container happy">
+        <div class="face">
+          <div class="eye"></div>
+          <div class="eye right"></div>
+          <div class="mouth happy"></div>
+        </div>
+        <div class="shadow scale"></div>
+      </div>
+
+      <div class="face-container sad">
+        <div class="face2">
+          <div class="eye"></div>
+          <div class="eye right"></div>
+          <div class="mouth sad"></div>
+        </div>
+        <div class="shadow move"></div>
+      </div>
+
+      <div class="infos">
+        <h2>Iniciando...</h2>
+        <span class="counter">Enviado <span class="count">0</span> de <span class="max">0</span></span>
+        <span class="next-left-time">Proxima mensagem em: <b>0 segundos</b></span>
+        <span class="last-message">Ultima Mensagem: <span>Nenhuma</span></span>
+        <div class="progress-bar">
+          <div></div>
+        </div>
+        <button class="button close">Fechado!</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    const ipc = require('electron').ipcRenderer;
+
+    const customTitleBar = require('custom-electron-titlebar');
+
+    let TitleBar = new customTitleBar.Titlebar({
+      backgroundColor: customTitleBar.Color.fromHex('#1a1a1a'),
+      //shadow: true,
+      icon: '../images/icon.ico',
+      menu: null,
+      titleHorizontalAlignment: 'left'
+    });
+  </script>
+  <script src="../scripts/sweetalert.js"></script>
+  <script type="text/javascript" src="../scripts/messages.js"></script>
+  <script type="text/javascript" src="../scripts/working-alert.js"></script>
+  <script type="text/javascript" src="../scripts/script.js"></script>
+</body>
+
+</html>
